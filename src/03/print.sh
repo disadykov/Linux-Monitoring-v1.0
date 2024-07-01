@@ -1,0 +1,71 @@
+#!/bin/bash
+
+BOLD_START='\033[1m'
+BOLD_END_CLEAR='\033[0m'
+
+param1=$1
+param2=$2
+column1_background=$3
+column1_font_color=$4
+column2_background=$5
+column2_font_color=$6
+
+#1
+BG_WHITE='\033[107m'
+FONT_WHITE='\033[97m'
+#2
+BG_RED='\033[41m'
+FONT_RED='\033[31m'
+#3
+BG_GREEN='\033[42m'
+FONT_GREEN='\033[32m'
+#4
+BG_BLUE='\033[44m'
+FONT_BLUE='\033[34m'
+#5
+BG_PURPLE='\033[45m'
+FONT_PURPLE='\033[35m'
+#6
+BG_BLACK='\033[40m'
+FONT_BLACK='\033[30m'
+
+case $column1_background in
+1) BG_COLUMN1=$BG_WHITE ;;
+2) BG_COLUMN1=$BG_RED ;;
+3) BG_COLUMN1=$BG_GREEN ;;
+4) BG_COLUMN1=$BG_BLUE ;;
+5) BG_COLUMN1=$BG_PURPLE ;;
+6) BG_COLUMN1=$BG_BLACK ;;
+esac 
+
+case $column2_background in
+1) BG_COLUMN2=$BG_WHITE ;;
+2) BG_COLUMN2=$BG_RED ;;
+3) BG_COLUMN2=$BG_GREEN ;;
+4) BG_COLUMN2=$BG_BLUE ;;
+5) BG_COLUMN2=$BG_PURPLE ;;
+6) BG_COLUMN2=$BG_BLACK ;;
+esac 
+
+case $column1_font_color in
+1) FONT_COLUMN1=$FONT_WHITE ;;
+2) FONT_COLUMN1=$FONT_RED ;;
+3) FONT_COLUMN1=$FONT_GREEN ;;
+4) FONT_COLUMN1=$FONT_BLUE ;;
+5) FONT_COLUMN1=$FONT_PURPLE ;;
+6) FONT_COLUMN1=$FONT_BLACK ;;
+esac 
+
+case $column2_font_color in
+1) FONT_COLUMN2=$FONT_WHITE ;;
+2) FONT_COLUMN2=$FONT_RED ;;
+3) FONT_COLUMN2=$FONT_GREEN ;;
+4) FONT_COLUMN2=$FONT_BLUE ;;
+5) FONT_COLUMN2=$FONT_PURPLE ;;
+6) FONT_COLUMN2=$FONT_BLACK ;;
+esac 
+
+echo -e $BOLD_START$BG_COLUMN1$FONT_COLUMN1$param1$BOLD_END_CLEAR' = '$BG_COLUMN2$FONT_COLUMN2$param2$BOLD_END_CLEAR
+#printf "%-8s %-15s %s\n" "$param1" " = " "$param2"
+
+
